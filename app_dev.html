@@ -1,0 +1,103 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>1kB Dolar</title>
+</head>
+<body>
+<style>
+    body {
+        text-align: center;
+        font-family: Arial;
+        font-size: 14
+    }
+
+    h1{
+        font-size: 36
+    }
+
+    input {
+        height: 44;
+        width: 80%;
+        border-radius: 24px;
+        border: 1px solid #dfe1e5;
+        outline: 0;
+        padding: 0 20px;
+        font-size: 16
+    }
+
+    button {
+        background-color: #f8f9fa;
+        border: 1px solid #f8f9fa;
+        border-radius: 4px;
+        color: #3c4043;
+        font-family: Arial;
+        font-size: 14px;
+        padding: 0 16px;
+        height: 36px;
+        text-align: center;
+        cursor: pointer;
+        margin: 11 4px
+    }
+</style>
+<br>
+<h1>$</h1>
+<input id="a" type="number" value="0">
+<br><br>
+<input id="b" type="number" value="0">
+<br><br>
+<button id="c" onclick="h()">Paralelo</button>
+<br><br>
+<span id="f"></span>
+<script>
+    const a = document.getElementById("a")
+    const b = document.getElementById("b")
+    const c = document.getElementById("c")
+    const f = document.getElementById("f")
+    let p1,p2,f1,f2;
+    let s=1,p=0;
+
+    fetch('https://pydolarvenezuela-api.vercel.app/api/v1/dollar/unit/enparalelovzla').then(r => {
+        return r.json()
+    }).then(d =>{
+        p1=d.price
+        f1=d.last_update
+        console.log(p1,f1)
+        h()
+    })
+
+    fetch('https://pydolarvenezuela-api.vercel.app/api/v1/dollar?page=bcv').then(r => {
+        return r.json()
+    }).then(d =>{
+        p2=d.monitors.usd.price
+        f2=d.datetime.date+"<br>"+d.datetime.time
+        console.log(p2,f2)
+    })
+
+    function h() {
+        if (s==1) {
+            c.innerHTML="PARALELO"
+            f.innerHTML=f1
+            b.value=p1
+            a.value=1
+            s=0
+            p=p1
+        }else{
+            c.innerHTML="BCV"
+            f.innerHTML=f2
+            a.value=1
+            b.value=p2
+            s=1
+            p=p2
+        }
+    }
+
+    function i(m) {
+        m==1 ? b.value=(p*a.value).toFixed(2) : a.value=(b.value/p).toFixed(2)
+    }
+
+    a.addEventListener("input", () => {i(1)})
+
+    b.addEventListener("input", () => {i(0)})
+</script>
+</body>
+</html>
