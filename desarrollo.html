@@ -51,7 +51,7 @@
 
 
         body{
-            background-color: #212121;
+            background-color: #202020;
             font-family: sans-serif;
             color: #fff;
         }
@@ -63,7 +63,7 @@
             max-width: 350px;
             flex-direction: column;
             border-radius: 12px;
-            background-color: #212121;
+            background-color: #202020;
             border: 1px solid #fff;
             padding: 1.6rem;
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -113,19 +113,17 @@
             .button-container button {
               display: block;
               width: 100%;
-              background-color: #fff;
-              padding: 10px 20px;
+              background-color: #606060;
+              padding: 6px 10px;
               text-transform: uppercase;
-              color: #000;
               font-weight: 600;
+              font-size: 1.2em;
               outline: 0;
               border: 0;
               border-radius: 10px;
               cursor: pointer;
-            }
-
-            .button-container button:hover {
-              background-color: darkgray;
+              color: #fff;
+              border: 1px solid rgba(255, 255, 255, 0.322);
             }
 
             .fecha p{
@@ -139,7 +137,7 @@
               display: flex;
               align-items: center;
               justify-content: center;
-              background-color: rgb(8, 8, 8);
+              background-color: #606060;
               overflow: hidden;
               padding: 0px 5px 0px 15px;
               border: 1px solid rgba(255, 255, 255, 0.322);
@@ -153,10 +151,10 @@
               border: none;
               outline: none;
               caret-color: rgb(255, 81, 0);
-              background-color: rgb(8, 8, 8);
+              background-color: #606060;
               font-weight: 600;
-              color: white;
               font-size: 1.5em;
+              color: white;
             }
 
             .visaCard {
@@ -166,11 +164,18 @@
               position: relative;
               width: 40px;
               height: 25px;
-              background-color: rgb(8, 8, 8);
+              background-color: #606060;
               pointer-events: none;
               border: 1px solid rgba(255, 255, 255, 0.068);
               border-radius: 7px;
               font-size: 1.5em;
+            }
+
+            .titulo{
+              margin: 0 auto;
+              width: fit-content;
+              font-size: 2em;
+              padding-bottom: 20px;
             }
 
     </style>
@@ -178,6 +183,8 @@
 <body>
 
     <br><br><br><br>
+
+    <div class="titulo">Calculadora</div>
 
     <div class="pack-container">
         <div class="header">
@@ -190,7 +197,7 @@
         </div>
 
         <div class="InputContainer">
-          <input placeholder="00.00" id="input-dolar" class="input" name="text" type="number" value="1.00">
+          <input id="input-dolar" class="input" name="text" type="number" value="1.00">
           <div class="visaCard">
             $
           </div>
@@ -199,7 +206,7 @@
         <br>
 
         <div class="InputContainer">
-          <input placeholder="00.00" id="input-bs" class="input" name="text" type="number">
+          <input id="input-bs" class="input" name="text" type="number">
           <div class="visaCard">
             Bs
           </div>
@@ -212,7 +219,7 @@
         </div>
       </div>
     </div>
-    <br>
+    <br><br><br>
     <div class="fecha" style="margin: 0 auto; width: fit-content; text-align: center;">
         <p style="color: darkgray;">Última actualización</p>
         <br>
