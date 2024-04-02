@@ -1,2 +1,8 @@
 # WebappDolarVenezuela
-Aplicación web minimalista para monitorear el precio del dólar en Venezuela. Incluye precion BCV y EnParaleloVzla. Usando la api pyDolarVenezuela API
+Aplicación web minimalista para monitorear el precio del dólar en Venezuela.
+
+Incluye precio BCV y Paralelo. Usando la api pyDolarVenezuela API.
+
+Web: https://ivanation.github.io/dolar/
+
+
