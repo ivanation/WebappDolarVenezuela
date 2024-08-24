@@ -248,8 +248,11 @@
     buttonChange.disabled = true;
 
     // URL de la API
-    const urlBcv = 'http://pydolarve.org/api/v1/dollar?monitor=bcv';
-    const urlDol = 'http://pydolarve.org/api/v1/dollar?monitor=enparalelovzla';
+    // const urlBcv = 'http://pydolarve.org/api/v1/dollar?monitor=bcv';
+    // const urlDol = 'http://pydolarve.org/api/v1/dollar?monitor=enparalelovzla';
+
+    const urlBcv = 'https://dinglish.info/bots/dolar/dolarx.php?tipo=bcv';
+    const urlDol = 'https://dinglish.info/bots/dolar/dolarx.php';
 
     // Realizar la petición fetch
     fetch(urlDol).then(response => {
